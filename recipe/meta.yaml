@@ -1,5 +1,5 @@
 {% set name = "databricks-sql-connector" %}
-{% set version = "3.7.1" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: b0e48b2acc73b6ab4e63b1a8688f3e7e0eed538bebee67526960239f873b99ef
+  sha256: 3634fe3d19ee4641cdf76a77854573d9fe234ccdebd20230aaf94053397bc693
 
 build:
   noarch: python
@@ -34,12 +34,11 @@ outputs:
         - python >={{ python_min }},<4.0.0
         - thrift >=0.16.0,<0.21.0
         - pandas >=1.2.5,<2.3.0
-        - pyarrow >=14.0.1
         - lz4 >=4.0.2,<5.0.0
         - requests >=2.18.1,<3.0.0
         - oauthlib >=3.1.0,<4.0.0
         # more restrictive python 3.11 requirement for noarch
-        - numpy >=1.23.4
+        - numpy >=1.23.4,<2.0.0
         - openpyxl >=3.0.10,<4.0.0
         - urllib3 >=1.26
 
@@ -52,7 +51,7 @@ outputs:
       commands:
         - pip check
 
-  - name: {{ name }}-with-alembic
+  - name: {{ name }}-with-pyarrow
     build:
       noarch: python
 
@@ -62,28 +61,7 @@ outputs:
       run:
         - python >={{ python_min }},<4.0.0
         - {{ pin_subpackage(name, exact=True) }}
-        - alembic >=1.0.11,<2.0.0
-        - sqlalchemy >=2.0.21
-    test:
-      requires:
-        - python {{ python_min }}
-        - pip
-      imports:
-        - databricks
-      commands:
-        - pip check
-
-  - name: {{ name }}-with-sqlalchemy
-    build:
-      noarch: python
-
-    requirements:
-      host:
-        - python {{ python_min }}
-      run:
-        - python >={{ python_min }},<4.0.0
-        - {{ pin_subpackage(name, exact=True) }}
-        - sqlalchemy >=2.0.21
+        - pyarrow >=14.0.1
     test:
       requires:
         - python {{ python_min }}
