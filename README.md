@@ -32,8 +32,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-databricks--sql--connector-green.svg)](https://anaconda.org/conda-forge/databricks-sql-connector) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/databricks-sql-connector.svg)](https://anaconda.org/conda-forge/databricks-sql-connector) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/databricks-sql-connector.svg)](https://anaconda.org/conda-forge/databricks-sql-connector) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/databricks-sql-connector.svg)](https://anaconda.org/conda-forge/databricks-sql-connector) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-databricks--sql--connector--with--alembic-green.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-alembic) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/databricks-sql-connector-with-alembic.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-alembic) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/databricks-sql-connector-with-alembic.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-alembic) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/databricks-sql-connector-with-alembic.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-alembic) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-databricks--sql--connector--with--sqlalchemy-green.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-sqlalchemy) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/databricks-sql-connector-with-sqlalchemy.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-sqlalchemy) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/databricks-sql-connector-with-sqlalchemy.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-sqlalchemy) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/databricks-sql-connector-with-sqlalchemy.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-sqlalchemy) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-databricks--sql--connector--with--pyarrow-green.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-pyarrow) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/databricks-sql-connector-with-pyarrow.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-pyarrow) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/databricks-sql-connector-with-pyarrow.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-pyarrow) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/databricks-sql-connector-with-pyarrow.svg)](https://anaconda.org/conda-forge/databricks-sql-connector-with-pyarrow) |
 
 Installing databricks-sql-connector
 ===================================
@@ -45,16 +44,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `databricks-sql-connector, databricks-sql-connector-with-alembic, databricks-sql-connector-with-sqlalchemy` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `databricks-sql-connector, databricks-sql-connector-with-pyarrow` can be installed with `conda`:
 
 ```
-conda install databricks-sql-connector databricks-sql-connector-with-alembic databricks-sql-connector-with-sqlalchemy
+conda install databricks-sql-connector databricks-sql-connector-with-pyarrow
 ```
 
 or with `mamba`:
 
 ```
-mamba install databricks-sql-connector databricks-sql-connector-with-alembic databricks-sql-connector-with-sqlalchemy
+mamba install databricks-sql-connector databricks-sql-connector-with-pyarrow
 ```
 
 It is possible to list all of the versions of `databricks-sql-connector` available on your platform with `conda`:
