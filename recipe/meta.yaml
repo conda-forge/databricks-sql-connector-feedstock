@@ -1,5 +1,5 @@
 {% set name = "databricks-sql-connector" %}
-{% set version = "4.2.1" %}
+{% set version = "4.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/databricks_sql_connector-{{ version }}.tar.gz
-  sha256: d0068dd36d082e2e42159a91b6b2b84ba102c7e8d8752526eefdccfc4d56286d
+  sha256: 409632a6adb93e849ecd5faaa2e98192e307c984e85cc7c696fb8e953acb7403
 
 build:
   noarch: python
@@ -42,6 +42,7 @@ outputs:
         - urllib3 >=1.26
         - python-dateutil >=2.8.0,<3.0.0
         - pyjwt >=2.0.0,<3.0.0
+        - pybreaker >=1.0.0,<2.0.0
 
     test:
       requires:
