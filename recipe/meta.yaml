@@ -1,5 +1,5 @@
 {% set name = "databricks-sql-connector" %}
-{% set version = "4.2.5" %}
+{% set version = "4.2.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/databricks_sql_connector-{{ version }}.tar.gz
-  sha256: 762df7568ef1998540f96b20cad6f1aaae87d1aad54e40e528f87e4524397291
+  sha256: 65e59f08e55dcc563c05e02e2321d5171dd9482e5792328d99ac097377795d01
 
 build:
   noarch: python
@@ -32,7 +32,7 @@ outputs:
         - poetry-core >=1.0.0
       run:
         - python >={{ python_min }},<4.0.0
-        - thrift >=0.16.0,<0.21.0
+        - thrift >=0.22.0,<0.23.0
         # tighter constraint for py >=3.13
         - pandas >=2.2.3,<2.4.0
         # tighter constraint for py >=3.14
