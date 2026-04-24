@@ -3,7 +3,7 @@ About databricks-sql-connector-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/databricks-sql-connector-feedstock/blob/main/LICENSE.txt)
 
-Home: https://databricks.com
+Home: https://databricks.com/
 
 Package license: Apache-2.0
 
