@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: databricks-sql-connector
-  version: "4.2.7"
+  version: "4.3.0"
 
 recipe:
   name: ${{ name }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/databricks_sql_connector-${{ version }}.tar.gz
-  sha256: cc104c44e04af02fbd8e25228d5096f094f9a00c11afd57cd99354dc6f3993a6
+  sha256: 047a56d31a61a04bd7eaa33a29e2c899b177f5b9089c127e9ae88c261e635cd1
 
 build:
   number: 0
