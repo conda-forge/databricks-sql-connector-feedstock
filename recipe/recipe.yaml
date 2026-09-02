@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: databricks-sql-connector
-  version: "4.4.0"
+  version: "4.5.0"
 
 recipe:
   name: ${{ name }}
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/databricks_sql_connector-${{ version }}.tar.gz
-  sha256: 97d20b5e12e4aa50d16fe5fea3914f19319a207f2f4912a395a08497c25cb16f
+  sha256: 69f7ac2cc35f77f78c62ffb1aa09dda3aeec3c5037b9d7eddca78ee2e81f046e
 
 build:
   number: 0
@@ -29,17 +29,18 @@ outputs:
         - poetry-core >=1.0.0
       run:
         - python >=${{ python_min }},<4.0.0
-        - thrift >=0.24.0,<0.25.0
-        # more restrictive constraint for python >=3.13
-        - pandas >=2.2.3,<4.0.0
+        # tightest of upstream's floors (python >=3.14)
         - lz4 >=4.4.5,<5.0.0
-        - requests >=2.18.1,<3.0.0
         - oauthlib >=3.1.0,<4.0.0
         - openpyxl >=3.0.10,<4.0.0
-        - urllib3 >=1.26
-        - python-dateutil >=2.8.0,<3.0.0
-        - pyjwt >=2.0.0,<3.0.0
+        # tightest of upstream's floors (python >=3.13)
+        - pandas >=2.2.3,<4.0.0
         - pybreaker >=1.0.0,<2.0.0
+        - pyjwt >=2.0.0,<3.0.0
+        - python-dateutil >=2.8.0,<3.0.0
+        - requests >=2.18.1,<3.0.0
+        - thrift >=0.24.0,<0.25.0
+        - urllib3 >=1.26
     tests:
       - python:
           imports:
@@ -59,7 +60,7 @@ outputs:
       run:
         - python >=${{ python_min }},<4.0.0
         - ${{ pin_subpackage(name, exact=True) }}
-        # most restrictive constraint for python >=3.14
+        # tightest of upstream's floors (python >=3.14)
         - pyarrow >=22.0.0
     tests:
       - python:
