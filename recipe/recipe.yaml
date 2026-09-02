@@ -61,7 +61,6 @@ outputs:
         - python >=${{ python_min }},<4.0.0
         - ${{ pin_subpackage(name, exact=True) }}
         # tightest of upstream's floors (python >=3.14)
-        # most restrictive constraint for python >=3.14
         - pyarrow >=22.0.0
     tests:
       - python:
